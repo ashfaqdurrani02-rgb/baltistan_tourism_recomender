@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Baltistan Tourism AI – Discover the Roof of the World</title>
+  <meta name="description" content="AI-powered tourism recommendation system for Baltistan, Pakistan. Discover Skardu, Shigar, Ghanche, Kharmang, and Rondu with personalised recommendations." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ═══════════════════════════ NAVIGATION ═══════════════════════════ -->
+<nav id="main-nav">
+  <div class="nav-container">
+    <div class="nav-brand">
+      <span class="nav-logo">🏔</span>
+      <span class="nav-title">Baltistan AI</span>
+    </div>
+    <div class="nav-links">
+      <a href="#discover"    class="nav-link">Discover</a>
+      <a href="#recommender" class="nav-link">Recommender</a>
+      <a href="#districts"   class="nav-link">Districts</a>
+      <a href="#contact"     class="nav-link">Contact</a>
+    </div>
+    <button class="nav-menu-btn" id="navMenuBtn" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════ HERO ═══════════════════════════ -->
+<header id="hero">
+  <!-- Auto-fading photo slideshow -->
+  <div class="hero-slides" id="heroSlides">
+    <div class="hero-slide active" style="background-image:url('https://images.unsplash.com/photo-1548011241-edd73af3fc2c?w=1920&q=80')"></div>
+    <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=80')"></div>
+    <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=1920&q=80')"></div>
+    <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1920&q=80')"></div>
+    <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1526772662000-3f88f10405ff?w=1920&q=80')"></div>
+  </div>
+
+  <!-- Dark overlay for readability -->
+  <div class="hero-overlay"></div>
+
+  <!-- Canvas interactive particles -->
+  <canvas id="heroCanvas"></canvas>
+
+  <!-- Slideshow dots -->
+  <div class="slide-dots" id="slideDots"></div>
+
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="badge-dot"></span>
+      AI-Powered Recommendations · Baltistan, Pakistan
+    </div>
+    <h1 class="hero-title">
+      Discover the<br />
+      <em>Roof of the World</em>
+    </h1>
+    <p class="hero-subtitle">
+      Personalised travel recommendations for Skardu, Shigar, Ghanche, Kharmang &amp; Rondu —
+      powered by Content-Based Filtering &amp; Hybrid Weighted Rating AI.
+    </p>
+    <div class="hero-stats">
+      <div class="stat-item"><span class="stat-num">27+</span><span class="stat-label">Destinations</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat-item"><span class="stat-num">5</span><span class="stat-label">Districts</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat-item"><span class="stat-num">7</span><span class="stat-label">Categories</span></div>
+    </div>
+    <a href="#recommender" class="hero-cta">
+      <span>Get My Recommendations</span>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+  <div class="hero-scroll-hint">
+    <span>Scroll to explore</span>
+    <div class="scroll-arrow"></div>
+  </div>
+</header>
+
+<!-- ═══════════════════════════ DISCOVER ═══════════════════════════ -->
+<section id="discover" class="discover-section">
+  <div class="section-header">
+    <span class="section-tag">The Region</span>
+    <h2>Why Baltistan?</h2>
+    <p>Home to four of the world's fourteen eight-thousanders, ancient Silk Road forts, emerald lakes, and a culture untouched by time.</p>
+  </div>
+  <div class="feature-grid">
+    <div class="feature-card tilt-card"><div class="feature-icon">🏔</div><h3>World-Class Mountains</h3><p>K2, Broad Peak, Gasherbrum — the Karakoram crown rises here. Concordia is called the throne room of the mountain gods.</p></div>
+    <div class="feature-card tilt-card"><div class="feature-icon">💧</div><h3>Alpine Lakes &amp; Glaciers</h3><p>Satpara, Sheosar, Kachura — turquoise mirrors set among wild highlands. The Baltoro is one of Earth's longest non-polar glaciers.</p></div>
+    <div class="feature-card tilt-card"><div class="feature-icon">🏰</div><h3>Living Heritage</h3><p>Shigar Fort, Khaplu Palace, and Kharpocho — restored Silk Road forts that host guests today as they did sultans centuries ago.</p></div>
+    <div class="feature-card tilt-card"><div class="feature-icon">🌸</div><h3>Deosai Plateau</h3><p>At 4,114 m, the world's second highest plateau blooms with wildflowers every summer and shelters the rare Himalayan brown bear.</p></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ RECOMMENDER ═══════════════════════════ -->
+<section id="recommender" class="recommender-section">
+  <div class="section-header light">
+    <span class="section-tag">AI Engine</span>
+    <h2>Find Your Perfect Destination</h2>
+    <p>Our hybrid model combines TF-IDF content matching with Bayesian weighted ratings to surface the best match for you.</p>
+  </div>
+
+  <div class="form-card glass-card" id="prefForm">
+    <div class="form-grid">
+      <!-- Travel Style Chips -->
+      <div class="form-group full-span">
+        <label class="form-label">
+          <span class="label-icon">🎯</span> Travel Style
+          <span class="label-hint">Select all that apply</span>
+        </label>
+        <div class="chip-group" id="travelStyleChips">
+          <button class="chip" data-val="adventure"   onclick="toggleChip(this)">🧗 Adventure</button>
+          <button class="chip" data-val="nature"      onclick="toggleChip(this)">🌿 Nature</button>
+          <button class="chip" data-val="photography" onclick="toggleChip(this)">📸 Photography</button>
+          <button class="chip" data-val="culture"     onclick="toggleChip(this)">🏛 Culture</button>
+          <button class="chip" data-val="family"      onclick="toggleChip(this)">👨‍👩‍👧 Family</button>
+          <button class="chip" data-val="camping"     onclick="toggleChip(this)">🏕 Camping</button>
+          <button class="chip" data-val="trekking"    onclick="toggleChip(this)">🥾 Trekking</button>
+          <button class="chip active" data-val="relaxed" onclick="toggleChip(this)">🛶 Relaxed</button>
+        </div>
+      </div>
+
+      <!-- District -->
+      <div class="form-group">
+        <label class="form-label" for="districtSel"><span class="label-icon">📍</span> Preferred District</label>
+        <div class="select-wrapper">
+          <select id="districtSel" class="form-select">
+            <option value="any">Any District</option>
+            <option value="Skardu">Skardu</option>
+            <option value="Shigar">Shigar</option>
+            <option value="Ghanche">Ghanche (Khaplu)</option>
+            <option value="Kharmang">Kharmang</option>
+            <option value="Rondu">Rondu</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Season -->
+      <div class="form-group">
+        <label class="form-label" for="seasonSel"><span class="label-icon">🌤</span> Travel Season</label>
+        <div class="select-wrapper">
+          <select id="seasonSel" class="form-select">
+            <option value="any">Any Season</option>
+            <option value="Apr">April</option>
+            <option value="May">May</option>
+            <option value="Jun">June</option>
+            <option value="Jul">July</option>
+            <option value="Aug">August</option>
+            <option value="Sep">September</option>
+            <option value="Oct">October</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Difficulty -->
+      <div class="form-group">
+        <label class="form-label" for="diffSel"><span class="label-icon">⚡</span> Difficulty Preference</label>
+        <div class="select-wrapper">
+          <select id="diffSel" class="form-select">
+            <option value="any">Any Difficulty</option>
+            <option value="Easy">Easy – Road accessible</option>
+            <option value="Moderate">Moderate – Jeep / short trek</option>
+            <option value="Hard">Hard – Multi-day trek</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Category -->
+      <div class="form-group">
+        <label class="form-label" for="catSel"><span class="label-icon">🗂</span> Category Interest</label>
+        <div class="select-wrapper">
+          <select id="catSel" class="form-select">
+            <option value="any">Any Category</option>
+            <option value="Lake">🏞 Lakes</option>
+            <option value="National Park">🦅 National Parks</option>
+            <option value="Fort">🏰 Forts / Heritage</option>
+            <option value="Valley">🌄 Valleys</option>
+            <option value="Trekking">🥾 Trekking / Glaciers</option>
+            <option value="Waterfall">💦 Waterfalls</option>
+            <option value="Religious">🕌 Religious Heritage</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Alpha slider -->
+      <div class="form-group full-span">
+        <label class="form-label">
+          <span class="label-icon">⚖️</span> Hybrid Weight — Content vs. Rating
+          <span class="label-hint" id="alphaLabel">α = 0.60 (content-leaning)</span>
+        </label>
+        <div class="slider-wrap">
+          <span class="slider-edge-label">Rating</span>
+          <input type="range" id="alphaSlider" min="0" max="1" step="0.05" value="0.6" class="form-range" oninput="updateAlphaLabel(this.value)" />
+          <span class="slider-edge-label">Content</span>
+        </div>
+      </div>
+    </div>
+
+    <button class="recommend-btn" id="recommendBtn" onclick="runRecommender()">
+      <span class="btn-text">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        Generate Recommendations
+      </span>
+      <div class="btn-shimmer"></div>
+    </button>
+  </div>
+
+  <!-- Results -->
+  <div id="resultsSection" class="results-section hidden">
+    <div class="results-header">
+      <h3 id="resultsTitle">Your Top Picks</h3>
+      <span class="results-badge" id="resultsBadge"></span>
+    </div>
+    <div class="results-grid" id="resultsGrid"></div>
+    <button class="reset-btn" onclick="resetResults()">← Refine Search</button>
+  </div>
+
+  <!-- No results -->
+  <div id="noResults" class="no-results hidden">
+    <div class="no-results-icon">🔍</div>
+    <h3>No destinations matched your filters</h3>
+    <p>Try broadening your district, season, or difficulty settings.</p>
+    <button class="reset-btn" onclick="resetResults()">← Adjust Filters</button>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ DISTRICTS ═══════════════════════════ -->
+<section id="districts" class="districts-section">
+  <div class="section-header">
+    <span class="section-tag">The Five Districts</span>
+    <h2>Explore by Region</h2>
+    <p>Each district of Baltistan carries its own distinct character — from towering glaciers to verdant river valleys.</p>
+  </div>
+  <div class="district-grid">
+    <div class="district-card tilt-card" onclick="quickFilter('Skardu')">
+      <div class="district-img skardu-bg"></div>
+      <div class="district-body"><h3>Skardu</h3><p>Gateway to K2, home of Deosai Plateau, Satpara Lake, and the Kharpocho Fort.</p><span class="district-tag">12 Destinations</span></div>
+    </div>
+    <div class="district-card tilt-card" onclick="quickFilter('Shigar')">
+      <div class="district-img shigar-bg"></div>
+      <div class="district-body"><h3>Shigar</h3><p>The historic Shigar Fort, gateway to Askole and the legendary Baltoro Glacier trek.</p><span class="district-tag">7 Destinations</span></div>
+    </div>
+    <div class="district-card tilt-card" onclick="quickFilter('Ghanche')">
+      <div class="district-img ghanche-bg"></div>
+      <div class="district-body"><h3>Ghanche (Khaplu)</h3><p>Khaplu Palace, Hushe Valley, and routes toward Masherbrum base camp.</p><span class="district-tag">6 Destinations</span></div>
+    </div>
+    <div class="district-card tilt-card" onclick="quickFilter('Kharmang')">
+      <div class="district-img kharmang-bg"></div>
+      <div class="district-body"><h3>Kharmang</h3><p>Remote Indus valley with the beautiful Manthokha Waterfall and traditional villages.</p><span class="district-tag">2 Destinations</span></div>
+    </div>
+    <div class="district-card tilt-card" onclick="quickFilter('Rondu')">
+      <div class="district-img rondu-bg"></div>
+      <div class="district-body"><h3>Rondu</h3><p>The narrow Indus gorge route — dramatic river scenery between Skardu and Gilgit.</p><span class="district-tag">1 Destination</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ CONTACT ═══════════════════════════ -->
+<section id="contact" class="contact-section">
+  <div class="contact-glow-orb contact-orb-1"></div>
+  <div class="contact-glow-orb contact-orb-2"></div>
+  <div class="section-header">
+    <span class="section-tag">Get in Touch</span>
+    <h2>Contact the Developer</h2>
+    <p>Have questions, suggestions, or want to collaborate? Reach out directly — we'd love to hear from you.</p>
+  </div>
+  <div class="contact-card glass-card">
+    <div class="contact-avatar">
+      <span class="contact-avatar-inner">👨‍💻</span>
+      <div class="contact-avatar-ring"></div>
+    </div>
+    <div class="contact-info">
+      <h3 class="contact-name">Ashfaq Durrani</h3>
+      <p class="contact-role">AI Developer &amp; Tourism Tech Specialist · Baltistan, Pakistan</p>
+      <div class="contact-details">
+        <div class="contact-detail-item">
+          <div class="contact-detail-icon">📞</div>
+          <div class="contact-detail-body">
+            <span class="contact-detail-label">Phone / WhatsApp</span>
+            <a href="tel:+923400596752" class="contact-detail-value">+92 340 059 6752</a>
+          </div>
+        </div>
+        <div class="contact-detail-item">
+          <div class="contact-detail-icon">✉️</div>
+          <div class="contact-detail-body">
+            <span class="contact-detail-label">Email Address</span>
+            <a href="mailto:ashfaqdurrani02@gmail.com" class="contact-detail-value">ashfaqdurrani02@gmail.com</a>
+          </div>
+        </div>
+      </div>
+      <div class="contact-actions">
+        <a href="https://wa.me/923400596752?text=Hello%20Ashfaq!%20I%20found%20your%20Baltistan%20Tourism%20AI%20and%20would%20like%20to%20connect."
+           target="_blank" rel="noopener" class="contact-btn contact-btn-whatsapp" id="whatsapp-btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Direct WhatsApp Chat
+        </a>
+        <a href="mailto:ashfaqdurrani02@gmail.com?subject=Baltistan%20Tourism%20AI%20Inquiry"
+           class="contact-btn contact-btn-email" id="email-btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Send Email
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-brand"><span class="nav-logo">🏔</span><span>Baltistan AI Tourism</span></div>
+    <p class="footer-note">
+      Powered by a Hybrid AI Model — Content-Based Filtering (TF-IDF + Cosine Similarity) &amp; Weighted Rating Scoring (Bayesian WR).<br />
+      Ratings are based on synthetic data. Verify coordinates on Google Maps / OSM before travel.
+    </p>
+    <div class="footer-contact-row">
+      <a href="https://wa.me/923400596752" target="_blank" rel="noopener" class="footer-contact-link">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        +92 340 059 6752
+      </a>
+      <span class="footer-dot">·</span>
+      <a href="mailto:ashfaqdurrani02@gmail.com" class="footer-contact-link">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        ashfaqdurrani02@gmail.com
+      </a>
+    </div>
+    <p class="footer-copy">© 2026 Baltistan Tourism AI · Celebrating the Heritage of Gilgit-Baltistan, Pakistan</p>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════ FLOATING CONTACT WIDGET ═══════════════════════════ -->
+<div class="floating-widget" id="floatingWidget">
+  <button class="widget-toggle" id="widgetToggle" aria-label="Contact us" onclick="toggleWidget()">
+    <svg class="widget-icon-open" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    <svg class="widget-icon-close hidden" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </button>
+  <div class="widget-panel" id="widgetPanel">
+    <div class="widget-header">
+      <span class="widget-avatar">👨‍💻</span>
+      <div>
+        <div class="widget-name">Ashfaq Durrani</div>
+        <div class="widget-status"><span class="widget-online-dot"></span> Usually responds in minutes</div>
+      </div>
+    </div>
+    <p class="widget-msg">Hi there! 👋 Ask me about Baltistan travel recommendations or get help with trip planning.</p>
+    <div class="widget-actions">
+      <a href="https://wa.me/923400596752?text=Hello%20Ashfaq!%20I%20found%20your%20Baltistan%20Tourism%20AI%20and%20would%20like%20to%20connect."
+         target="_blank" rel="noopener" class="widget-btn widget-wa" id="widget-whatsapp-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Chat on WhatsApp
+      </a>
+      <a href="mailto:ashfaqdurrani02@gmail.com?subject=Baltistan%20Tourism%20AI%20Inquiry"
+         class="widget-btn widget-email" id="widget-email-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Send an Email
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Detail Modal -->
+<div id="detailModal" class="modal-overlay hidden" onclick="closeModal(event)">
+  <div class="modal-box glass-card" id="modalBox"></div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
